@@ -61,7 +61,7 @@ namespace Bookstore
     {
         public string Name;
         public string Author;
-        public string Editor;
+        public string Publisher;
         public int Year;
     }
 }
