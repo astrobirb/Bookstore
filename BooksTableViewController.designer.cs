@@ -14,5 +14,8 @@ namespace Bookstore
     [Register ("BooksTableViewController")]
     partial class BooksTableViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
