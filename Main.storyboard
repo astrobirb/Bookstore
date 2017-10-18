@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="198">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="638">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,6 +58,7 @@
                                     <outlet property="bookAuthorLabel" destination="211" id="name-outlet-211"/>
                                     <outlet property="bookPublisherLabel" destination="212" id="name-outlet-212"/>
                                     <outlet property="bookYearLabel" destination="213" id="name-outlet-213"/>
+                                    <segue id="886" destination="770" kind="show" identifier="DetailsSegue"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,13 +67,72 @@
                             <outlet property="delegate" destination="198" id="201"/>
                         </connections>
                     </tableView>
+                    <navigationItem title="Books" id="757" key="navigationItem"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="204" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="432" y="0.0"/>
         </scene>
+        <scene sceneID="637">
+            <objects>
+                <navigationController id="638" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="640">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="758" destination="198" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="641" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="7"/>
+        </scene>
+        <scene sceneID="769">
+            <objects>
+                <viewController id="770" sceneMemberID="viewController" customClass="DetailsViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="767"/>
+                        <viewControllerLayoutGuide type="bottom" id="768"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="771">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="888" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="20" y="88" width="374" height="557"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="889" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" usesAttributedText="YES">
+                                <rect key="frame" x="20" y="653" width="374" height="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Book Name">
+                                        <attributes>
+                                            <font key="NSFont" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </label>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="bookImageView" destination="888" id="name-outlet-888"/>
+                        <outlet property="bookNameLabel" destination="889" id="name-outlet-889"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="772" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="2"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina55"/>
     </simulatedMetricsContainer>
+    <resources>
+        <image name="Images/HP1.jpg" width="795" height="1200"/>
+        <image name="Images/HP2.jpg" width="794" height="1200"/>
+        <image name="Images/HP3.jpg" width="400" height="589"/>
+    </resources>
 </document>
